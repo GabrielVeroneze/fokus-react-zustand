@@ -45,8 +45,8 @@ O usuário pode **iniciar** e **pausar** o cronômetro, mantendo o controle do f
 
 Você pode acessar ou baixar o projeto inicial:
 
-- [Código-fonte do projeto base]()
-- [Download em ZIP]()
+- [Código-fonte do projeto base](https://github.com/GabrielVeroneze/fokus-react-zustand/tree/main)
+- [Download em ZIP](https://github.com/GabrielVeroneze/fokus-react-zustand/archive/refs/heads/main.zip)
 
 ---
 
