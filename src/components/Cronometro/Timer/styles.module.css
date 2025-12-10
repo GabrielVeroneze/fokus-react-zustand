@@ -1,0 +1,16 @@
+.cronometer-timer {
+    color: var(--color-secondary);
+    font-family: Unbounded;
+    font-size: 12rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 3.2rem;
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    .cronometer__timer {
+        font-size: 6rem;
+    }
+}

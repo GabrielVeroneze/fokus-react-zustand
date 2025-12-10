@@ -1,0 +1,19 @@
+.cronometer-modes__button {
+    background: none;
+    border: none;
+    color: var(--color-secondary);
+    cursor: pointer;
+    font-family: Montserrat;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    outline: inherit;
+    padding: 0.8rem;
+}
+
+.cronometer-modes__button--active {
+    background: var(--azul-royal);
+    border-radius: 0.8rem;
+    font-weight: 600;
+}

@@ -1,0 +1,9 @@
+.cronometer-modes {
+    align-items: center;
+    display: flex;
+    gap: 1.6rem;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}

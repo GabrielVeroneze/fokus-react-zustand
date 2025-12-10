@@ -1,0 +1,13 @@
+.cronometer {
+    align-items: center;
+    background: var(--fundo-card-timer);
+    border: 0.2rem solid var(--azul-royal);
+    border-radius: 3.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 8rem auto;
+    max-width: 90%;
+    padding: 2.4rem;
+    width: 59rem;
+}

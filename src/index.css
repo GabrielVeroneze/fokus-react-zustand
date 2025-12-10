@@ -1,0 +1,37 @@
+:root {
+    --azul-profundo: #01080e;
+    --azul-royal: #144480;
+    --color-primary: #123456;
+    --color-secondary: #fff;
+    --fundo-card: rgba(255, 255, 255, 0.5);
+    --fundo-card-concluido: rgba(0, 244, 191, 0.4);
+    --fundo-card-timer: rgba(20, 68, 128, 0.3);
+    --lils: #b872ff;
+    --linear-botes: linear-gradient(180deg, #b872ff 0%, #144480 100%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    max-width: 100%;
+    padding: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Unbounded', cursive;
+}
