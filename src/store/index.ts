@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { computarContagemRegressiva } from '@/utils/contagemRegressiva'
 import type { Modo, ModoCronometro } from '@/types/ModoCronometro'
 
 export const MODO_CRONOMETRO: Record<Modo, ModoCronometro> = {
@@ -26,14 +27,22 @@ interface CronometroState {
     modoCronometro: ModoCronometro
     tempoEmSegundos: number
     setModoCronometro: (novoModo: ModoCronometro) => void
+    intervaloId: number | null
+    iniciarCronometro: () => void
 }
 
 export const useCronometroStore = create<CronometroState>((set) => ({
     modoCronometro: MODO_CRONOMETRO.FOCO,
     tempoEmSegundos: MODO_CRONOMETRO.FOCO.tempoInicialEmSegundos,
-    setModoCronometro: (novoModo) =>
+    setModoCronometro: (novoModo) => {
         set({
             modoCronometro: novoModo,
             tempoEmSegundos: novoModo.tempoInicialEmSegundos,
-        }),
+        })
+    },
+    intervaloId: null,
+    iniciarCronometro: () => {
+        const novoId = setInterval(computarContagemRegressiva, 1000)
+        set({ intervaloId: novoId })
+    },
 }))
