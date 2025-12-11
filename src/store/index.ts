@@ -1,7 +1,7 @@
-import type { ModoCronometro } from '@/types/ModoCronometro'
 import { create } from 'zustand'
+import type { Modo, ModoCronometro } from '@/types/ModoCronometro'
 
-export const MODO_CRONOMETRO: Record<string, ModoCronometro> = {
+export const MODO_CRONOMETRO: Record<Modo, ModoCronometro> = {
     FOCO: {
         id: 'foco',
         nome: 'Foco',
