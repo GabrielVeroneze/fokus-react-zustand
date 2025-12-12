@@ -2,10 +2,12 @@ import { useCronometroStore } from '@/store'
 
 export const computarContagemRegressiva = () => {
     const tempoAtual = useCronometroStore.getState().tempoEmSegundos
+    const pausarCronometro = useCronometroStore.getState().pausarCronometro
 
     if (tempoAtual > 0) {
         decrementarTempo()
     } else {
+        pausarCronometro()
         redefinirTempo()
     }
 }
