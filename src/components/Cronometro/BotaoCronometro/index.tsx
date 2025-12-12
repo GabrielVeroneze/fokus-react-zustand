@@ -10,15 +10,26 @@ export default function BotaoCronometro() {
     const iniciarCronometro = useCronometroStore(
         (state) => state.iniciarCronometro,
     )
+    const pausarCronometro = useCronometroStore(
+        (state) => state.pausarCronometro,
+    )
 
     const textoBotao = intervaloId ? 'Pausar' : 'Começar'
     const iconeBotao = intervaloId ? pauseImg : play_arrowImg
+
+    const IniciarOuPausar = () => {
+        if (!intervaloId) {
+            iniciarCronometro()
+        } else {
+            pausarCronometro()
+        }
+    }
 
     return (
         <div className={styles['cronometer__primary-button-wrapper']}>
             <button
                 className={styles['cronometer__primary-button']}
-                onClick={iniciarCronometro}
+                onClick={IniciarOuPausar}
             >
                 <img
                     className={styles['cronometer__primary-button-icon']}
