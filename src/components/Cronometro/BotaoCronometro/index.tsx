@@ -14,14 +14,19 @@ export default function BotaoCronometro() {
         (state) => state.pausarCronometro,
     )
 
+    const audioPlay = new Audio(audioPlaySom)
+    const audioPause = new Audio(audioPauseSom)
+
     const textoBotao = intervaloId ? 'Pausar' : 'Começar'
     const iconeBotao = intervaloId ? pauseImg : play_arrowImg
 
     const IniciarOuPausar = () => {
         if (!intervaloId) {
             iniciarCronometro()
+            audioPlay.play()
         } else {
             pausarCronometro()
+            audioPause.play()
         }
     }
 
