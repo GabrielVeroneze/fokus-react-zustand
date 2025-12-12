@@ -1,16 +1,27 @@
+import { useCronometroStore } from '@/store'
 import logoImg from '@/assets/imgs/logo.png'
 import focoImg from '@/assets/imgs/foco.png'
+import descancoCurtoImg from '@/assets/imgs/descanso-curto.png'
+import descancoLongoImg from '@/assets/imgs/descanso-longo.png'
 import styles from './styles.module.css'
 
 export default function Cabecalho() {
-    const modoCronometro = {
-        id: 'foco',
-        nome: 'Foco',
-        frase: ['Otimize sua produtividade,', 'mergulhe no que importa.'],
-        tempoInicialEmSegundos: 30,
-    }
+    const modoCronometro = useCronometroStore((state) => state.modoCronometro)
 
     const [primeiroTexto, segundoTexto] = modoCronometro.frase
+
+    const renderizarImagem = () => {
+        switch (modoCronometro.id) {
+            case 'foco':
+                return focoImg
+            case 'descanso-curto':
+                return descancoCurtoImg
+            case 'descanso-longo':
+                return descancoLongoImg
+            default:
+                return focoImg
+        }
+    }
 
     return (
         <header className="header">
@@ -27,8 +38,8 @@ export default function Cabecalho() {
                 <figure className={styles['header__image-figure']}>
                     <img
                         className={styles['header__image']}
-                        src={focoImg}
-                        alt=""
+                        src={renderizarImagem()}
+                        alt={`Ilustração do modo ${modoCronometro.nome}`}
                     />
                 </figure>
             </section>
