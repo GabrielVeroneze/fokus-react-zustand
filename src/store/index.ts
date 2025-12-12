@@ -29,6 +29,7 @@ interface CronometroState {
     setModoCronometro: (novoModo: ModoCronometro) => void
     intervaloId: number | null
     iniciarCronometro: () => void
+    pausarCronometro: () => void
 }
 
 export const useCronometroStore = create<CronometroState>((set) => ({
@@ -44,5 +45,14 @@ export const useCronometroStore = create<CronometroState>((set) => ({
     iniciarCronometro: () => {
         const novoId = setInterval(computarContagemRegressiva, 1000)
         set({ intervaloId: novoId })
+    },
+    pausarCronometro: () => {
+        set((state) => {
+            if (state.intervaloId) {
+                clearInterval(state.intervaloId)
+            }
+
+            return { intervaloId: null }
+        })
     },
 }))
